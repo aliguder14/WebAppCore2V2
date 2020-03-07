@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,6 +23,7 @@ namespace WebAppCore2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Yeni kod eklendi ve yotum satırı eklendi.
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             //services.Configure<IISServerOptions>(options =>
