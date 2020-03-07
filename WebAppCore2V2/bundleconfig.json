@@ -1,0 +1,26 @@
+[
+  {
+    "outputFileName": "wwwroot/lib/angular.js/bundleAngular.js",
+    "inputFiles": [
+      "wwwroot/lib/angular.js/angular.js",
+      "wwwroot/lib/angular.js/angular-animate.js",
+      "wwwroot/lib/angular.js/angular-aria.js",
+      "wwwroot/lib/angular.js/angular-cookies.js",
+      "wwwroot/lib/angular.js/angular-loader.js",
+      "wwwroot/lib/angular.js/angular-message-format.js",
+      "wwwroot/lib/angular.js/angular-mocks.js",
+      "wwwroot/lib/angular.js/angular-messages.js",
+      "wwwroot/lib/angular.js/angular-resource.js",
+      "wwwroot/lib/angular.js/angular-parse-ext.js",
+      "wwwroot/lib/angular.js/angular-route.js",
+      "wwwroot/lib/angular.js/angular-sanitize.js",
+      "wwwroot/lib/angular.js/angular-touch.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/AliApp.min.js",
+    "inputFiles": [
+      "wwwroot/js/AliApp.js"
+    ]
+  }
+]

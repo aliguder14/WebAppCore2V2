@@ -1,0 +1,167 @@
+﻿@model OgrenciModel
+@{
+    ViewData["Title"] = "Alinin İlk Sayfası";
+    Layout = "~/Views/Shared/_layout2.cshtml";
+}
+<script>
+    //$(function () {
+    //    $("#dvBasariMesaj").hide();
+    //});
+
+    //var event = new Event("build");
+
+
+
+    function alertKapat() {
+
+        $("#dvBasariMesaj").hide();
+    }
+
+    angular.element(document).ready(function () {
+        angular.bootstrap(document.getElementById("AliApp2"), ["AliApp2"]);
+    });
+
+    //alert(@@_jscript_version);
+
+</script>
+
+<style>
+
+    #dvBasariMesaj {
+        position: absolute;
+        right: 100px
+    }
+</style>
+
+<div id="dvBasariMesaj"
+     class="alert alert-success alert-dismissible">
+    <button type="button" class="close" onclick="alertKapat()">&times;</button>
+    Tıklandı. İşlem başarı ile gerçekleşti.
+</div>
+
+<div class="text-center" ng-app="AliApp">
+    <h1 class="display-4">Alinin Sayfasına Hoş Geldiniz</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+    <div class="col-md-6" ng-controller="AliController">
+
+        <div class="container">
+            <div class="jumbotron">
+                <personel-directive deger="aciklamaMetni">bnn</personel-directive>
+                <p>Angular, Bootstrap, ASP.NET Core MVC, Restfull API
+                </p>
+            </div>
+        </div>
+
+
+
+
+        @*ng-init="maliyet=45.00;miktar=5;ogrenci={Numarasi:564,Adi:'Birsen',Soyadi:'ADAGÜL'}*@
+
+        <p><input class="form-control" type="text" name="name" ng-model="Adi" asp-for="Adi" placeholder="Adınız" />  </p>
+        <p><input class="form-control" type="text" name="name2" ng-model="Soyadi" asp-for="Soyadi" placeholder="Soyadınız" />  </p>
+        <p> Adınız ve Soyadınız: {{Adi + " "+ Soyadi}}  </p>
+        <p>Hesaplanan Miktar: {{Maliyet*Miktar}}</p>
+        <h1 class="">Öğrenci Bilgileri45</h1>
+        <div class="container">
+            <p> Adı ve Soyadı: {{ogrenci.Adi + " "+ ogrenci.Soyadi}} </p>
+            <p>Numarası: {{ogrenci.Numarasi}}</p>
+            <div id="satir1">fgfgf</div>
+            <span data-ng-bind="ogrenci.Numarasi" style="font-weight:bold"></span>
+            <div><p>{{Aciklama}} 6768768</p></div>
+            <p><input type="checkbox" ng-model="Disabled" /></p>
+            <p>
+                <button class="btn btn-info"
+                        ng-disabled="Disabled"
+                        ng-show="true"
+                        ng-click="islemYap()">
+                    İşlem Yap
+                </button>
+            </p>
+
+        </div>
+
+        <div ng-switch="Disabled">
+
+            <div ng-switch-when="true">
+                <span style="font-weight:bold">Disabled</span>
+
+            </div>
+            <div ng-switch-when="false">
+                <span style="font-weight:bold">Enabled</span>
+            </div>
+
+
+
+        </div>
+
+
+        <div>
+            @*<select ng-change="uyariBastir()">
+                    <option value="Ankara">Ankara</option>
+                    <option value="Istanbul">İstanbul</option>
+                    <option value="Antalya">Antalya</option>
+                </select>*@
+
+            <select class="custom-select" ng-options="sehir as sehir.adi for sehir in sehirler" ng-model="seciliSehir">
+            </select>
+
+        </div>
+
+        <div class="container">
+            <table class="table table-bordered table-hover">
+
+                <tr>
+                    <th>Sıra Numarası</th>
+                    <th>Adi</th>
+                    <th>Soyadi</th>
+
+                </tr>   
+
+                <tr ng-repeat="ogrenci in ogrenciler">
+                    <td>1</td>
+                    <td>{{ogrenci.Adi}}</td>
+                    <td>{{ogrenci.Soyadi}}</td>
+                </tr>
+            </table>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-action" ng-repeat="ogrenci in ogrenciler">{{ogrenci.Adi}} &nbsp; {{ogrenci.Soyadi}}</li>
+            </ul>
+
+
+        </div>
+
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Şehirler
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Ankara</a>
+                <a class="dropdown-item" href="#">Antalya</a>
+                <a class="dropdown-item" href="#">İstanbul</a>
+                <a class="dropdown-item" href="#">İzmir</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    @*<div class="col-5" ng-app="AliApp" ng-controller="angAliController">
+            <p>{{baslik}}</p>
+
+        </div>*@
+
+
+</div>
+<div id="AliApp2">
+    <div ng-controller="angAliController">
+        <p>{{baslik}}</p>
+
+    </div>
+
+</div>
+
+
+
